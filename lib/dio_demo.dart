@@ -16,7 +16,7 @@ BaseOptions baseOptions = BaseOptions(
 );
 
 Future<dynamic> getPosts() async {
-  initInterceptors();
+  //initInterceptors();
   final postResponse = await dio.get(
     '/posts',
 /*     queryParameters: {
@@ -25,7 +25,7 @@ Future<dynamic> getPosts() async {
   );
 
   if (postResponse.statusCode == 200) {
-    return jsonDecode(postResponse.data);
+    return postResponse.data;
   }
 
   throw Exception(
