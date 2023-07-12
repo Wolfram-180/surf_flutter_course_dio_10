@@ -40,7 +40,7 @@ class _MyHomePageState extends State<MyHomePage> {
   }
 
   void testNetworkCall() async {
-    final newPost = await createPost();
+    // final newPost = await createPost();
     final response = await getPosts();
     final postsList = parsePosts(response);
 

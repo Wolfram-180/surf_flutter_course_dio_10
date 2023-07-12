@@ -3,10 +3,11 @@ import 'package:dio/dio.dart';
 final dio = Dio(baseOptions);
 
 BaseOptions baseOptions = BaseOptions(
-  baseUrl: 'https://jsonplaceholder.typicode.com',
-  connectTimeout: const Duration(seconds: 10),
-  receiveTimeout: const Duration(seconds: 10),
-  sendTimeout: const Duration(seconds: 10),
+  // baseUrl: 'https://jsonplaceholder.typicode.com',
+  baseUrl: 'https://test-backend-flutter.surfstudio.ru',
+  connectTimeout: const Duration(seconds: 5),
+  receiveTimeout: const Duration(seconds: 5),
+  sendTimeout: const Duration(seconds: 5),
   responseType: ResponseType.json,
   headers: {
     'device-info': 'Nokia 3310 OS 14',
