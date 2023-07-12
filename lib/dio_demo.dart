@@ -16,7 +16,7 @@ BaseOptions baseOptions = BaseOptions(
 );
 
 Future<dynamic> getPosts() async {
-  //initInterceptors();
+  initInterceptors();
   final postResponse = await dio.get(
     '/posts',
 /*     queryParameters: {
@@ -56,12 +56,20 @@ Future<dynamic> createPost() async {
 void initInterceptors() {
   dio.interceptors.add(
     InterceptorsWrapper(
-      onError: (e, handler) {},
-      onRequest: (options, handler) {
-        print('request sent');
+      onError: (e, handler) {
+        print('error: $e.message');
+        handler.next(e);
       },
-      onResponse: (e, handler) {
+      onRequest: (r, handler) {
+        print('request sent');
+        print(r.method);
+        print(r.path);
+        handler.next(r);
+      },
+      onResponse: (r, handler) {
         print('response received');
+        print(r.data);
+        handler.next(r);
       },
     ),
   );
