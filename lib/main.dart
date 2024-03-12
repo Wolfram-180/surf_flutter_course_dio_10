@@ -8,7 +8,7 @@ void main() {
 
 class MyApp extends StatelessWidget {
   const MyApp({super.key});
-  static const _title = 'Surf Flutter Course: Dio (module 10)';
+  static const _title = 'dio';
 
   @override
   Widget build(BuildContext context) {
